@@ -54,10 +54,6 @@
             background: #FF5733; /* Highlight color for today's date */
             font-weight: bold;
         }
-        .day-name {
-            font-weight: bold;
-            color: #333;
-        }
     </style>
 </head>
 <body>
@@ -68,16 +64,7 @@
         <h2 id="monthYear"></h2>
         <button onclick="nextMonth()">&#10095;</button>
     </div>
-    <div class="days">
-        <div class="day-name">Sun</div>
-        <div class="day-name">Mon</div>
-        <div class="day-name">Tue</div>
-        <div class="day-name">Wed</div>
-        <div class="day-name">Thu</div>
-        <div class="day-name">Fri</div>
-        <div class="day-name">Sat</div>
-    </div>
-    <div id="days"></div>
+    <div class="days" id="days"></div>
 </div>
 
 <script>
