@@ -50,6 +50,10 @@
         .empty {
             background: transparent;
         }
+        .today {
+            background: #FF5733; /* Highlight color for today's date */
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +71,7 @@
     const monthYear = document.getElementById('monthYear');
     const daysContainer = document.getElementById('days');
     let currentDate = new Date();
+    const today = new Date(); // Store today's date
 
     function renderCalendar() {
         const year = currentDate.getFullYear();
@@ -82,7 +87,10 @@
         }
 
         for (let date = 1; date <= lastDate; date++) {
-            daysContainer.innerHTML += `<div class="day">${date}</div>`;
+            // Check if the date is today
+            const isToday = date === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+            const dayClass = isToday ? 'day today' : 'day';
+            daysContainer.innerHTML += `<div class="${dayClass}">${date}</div>`;
         }
     }
 
